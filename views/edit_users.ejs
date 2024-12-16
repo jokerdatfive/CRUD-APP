@@ -1,0 +1,50 @@
+<%- include ('layout/header')%>
+
+
+<div class="container"> 
+    <div class="row">
+       <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto mt-4">
+              <div class="card shdow">
+                <div class="card-header bg-success">
+                    <h3 class="text-white">Edit User (<%= user.name%>)</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form action="/update/<%= user._id%>" method="post" id="add-form" enctype="multipart/form-data">
+                        <div class = "mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" value="<%= user.name %>" required/>
+                            
+                        </div>
+                        <div class = "mb-3">
+                             
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" value="<%= user.email %>"  required/>
+                        </div>
+
+                         <div class="mb-3">
+                           
+                         <label for="phone" class="form-label">Phone</label>
+                         <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter Phone number" value="<%= user.phone %>"  required/>
+                      </div>
+                       
+                      <div class="mb-3 d-grid">
+                        
+                        <label for="image" class="form-label">Upload Image</label>
+                        <input type="file" class="form-control" id="image" name="image" />
+                         <img src="/<%= user.image %>" width="100" class="img-thumbnail mt-1" >     
+                      </div>
+                      <input type="hidden" name="old_image" value="<%= user.image %>"/>
+                      <div class="mb-3 d-grid">
+                        
+                        <button type="submit" name="submit" value="Update User" class="btn btn-success btn-lg">Add User</button>
+                      </div>
+                    </form>
+                </div>
+              </div>
+        </div>
+       </div>
+    </div>
+</div>
+<%- include ('layout/footer')%>

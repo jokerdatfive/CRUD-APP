@@ -1,0 +1,50 @@
+<%- include ('layout/header')%>
+
+
+<div class="container"> 
+    <div class="row">
+       <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto mt-4">
+              <div class="card shdow">
+                <div class="card-header bg-primary">
+                    <h3 class="text-white">Add New User</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form action="/add" method="post" id="add-form" enctype="multipart/form-data">
+                        <div class = "mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required/>
+                            
+                        </div>
+                        <div class = "mb-3">
+                             
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required/>
+                        </div>
+
+                         <div class="mb-3">
+                           
+                         <label for="phone" class="form-label">Phone</label>
+                         <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter Phone number" required/>
+                      </div>
+                       
+                      <div class="mb-3 d-grid">
+                        
+                        <label for="image" class="form-label">Upload Image</label>
+                        <input type="file" class="form-control" id="image" name="image" required/>
+
+                      </div>
+                      
+                      <div class="mb-3 d-grid">
+                        
+                        <button type="submit" name="submit" value="Add User" class="btn btn-primary btn-lg">Add User</button>
+                      </div>
+                    </form>
+                </div>
+              </div>
+        </div>
+       </div>
+    </div>
+</div>
+<%- include ('layout/footer')%>
